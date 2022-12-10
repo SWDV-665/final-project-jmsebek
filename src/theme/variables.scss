@@ -74,6 +74,16 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** custom app colors **/
+  --ion-background-color: #eeeeee;
+  --ion-background-color-rgb: 238, 238, 238;
+  --ion-tab-bar-background: #1F3754;
+  --ion-tab-bar-color: white;
+  --ion-toolbar-background: #537697;
+  --ion-toolbar-color: white;
+
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -189,7 +199,7 @@
     --ion-toolbar-background: var(--ion-color-step-150);
     --ion-toolbar-border-color: var(--ion-color-step-250);
   }
-
+ 
 
   /*
    * Material Design Dark Theme
