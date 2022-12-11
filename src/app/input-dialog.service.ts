@@ -25,12 +25,20 @@ export class InputDialogService {
         {
           name: 'origin',
           placeholder: 'Origin',
-          value: item? item.origin : null
+          value: item? item.origin : null,
+          attributes:{
+            maxLength: 3,
+            minLength: 3
+          }
         },
         {
           name: 'destination',
           placeholder: 'Destination',
-          value: item? item.destination : null
+          value: item? item.destination : null,
+          attributes:{
+            maxLength: 3,
+            minLength: 3
+          }
         },
         {
           name: 'tailNumber',
@@ -71,6 +79,11 @@ export class InputDialogService {
         {
           text: 'Save',
           handler: item=>{
+            //if any fields are empty then show warning
+            if (item.flightdate === '' || item.origin === '' || item.destination === '' || item.time === ''
+            || item.night === '' || item.landing === ''){
+              this.validateDataPrompt();
+            } else {
             console.log('Save clicked', item);
             if (index !== undefined){
               this.dataService.updateItem(item, index);
@@ -78,11 +91,20 @@ export class InputDialogService {
             else {
               this.dataService.addItem(item);
             }
-          }
+          }}
         }
       ]
     });
     await prompt.present();
+  }
+
+  async validateDataPrompt(){
+    const warningalert = await this.alertCtrl.create({
+      header: "Warning",
+      message: "Please fill in all fields",
+      buttons: ["OK"]
+    });
+    await warningalert.present();
   }
 
   //shows prompt for adding or updating flight information
