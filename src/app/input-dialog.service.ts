@@ -41,19 +41,23 @@ export class InputDialogService {
           name: 'time',
           placeholder: 'Total Flight Hours',
           value: item? item.time : null,
-          type: 'number'
+          type: 'number',
+          min: 0
         },
         {
           name: 'night',
           placeholder: 'Total Night Hours',
           value: item? item.night : null,
-          type: 'number'
+          type: 'number',
+          min: 0
         },
         {
           name: 'landing',
           placeholder: 'Number of Landings',
           value: item? item.landing : null,
-          type: 'number'
+          type: 'number',
+          min: 0,
+          max: 1
         },
 
       ],

@@ -11,7 +11,7 @@ export class LogbookServiceService {
       origin: 'ORD',
       destination: 'CHA',
       tailNumber: '357',
-      time: '1.5',
+      time: '1.5', 
       night: '0',
       landing: '1'
     },
@@ -32,7 +32,16 @@ export class LogbookServiceService {
       time: '1.8',
       night: '1.8',
       landing: '0'
-  }
+  },
+  {
+    flightdate: '2022-12-05',
+    origin: 'ATL',
+    destination: 'SFO',
+    tailNumber: '612',
+    time: '4.8',
+    night: '2.8',
+    landing: '1'
+},
   ];
 
   person =
@@ -92,10 +101,19 @@ export class LogbookServiceService {
     this.totalLandings = this.getTotalLandings();
   }
 
-  //returns list of flights
+  //returns list of flights sorted by date
   getItems(){
+    this.items.sort((a, b) => {
+      let da = new Date(a.flightdate);
+      let db = new Date(b.flightdate);
+      
+      return da.getTime() - db.getTime();
+      
+    });
+    
     return this.items;
   }
+
 
   //returns person information
   getPerson(){
