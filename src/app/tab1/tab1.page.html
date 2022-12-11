@@ -22,7 +22,7 @@
         <b>Total time:</b>
       </ion-col>
       <ion-col col-2 text-right>
-        {{totalFlightTime}}
+        {{totalFlightTime | number:'1.1-1'}}
       </ion-col>
     </ion-row>
     <ion-row class="row">
@@ -38,7 +38,7 @@
         <b>Night:</b>
       </ion-col>
       <ion-col col-2 text-right>
-        {{totalNightTime}}
+        {{totalNightTime | number:'1.1-1'}}
       </ion-col>
     </ion-row>
     <ion-row class="row">
@@ -46,25 +46,10 @@
         <b>PIC:</b>
       </ion-col>
       <ion-col col-2 text-right>
-        {{totalFlightTime}}
+        {{totalFlightTime | number:'1.1-1'}}
       </ion-col>
     </ion-row>
-    <!--<ion-row class="row">
-      <ion-col col-2>
-        <b>SIC:</b>
-      </ion-col>
-      <ion-col col-2 text-right>
-        {{totalSic}}
-      </ion-col>
-    </ion-row>
-    <ion-row class="row">
-      <ion-col col-2>
-        <b>Multi:</b>
-      </ion-col>
-      <ion-col col-2 text-right>
-        {{totalMulti}}
-      </ion-col>
-    </ion-row>-->
+
   </ion-grid>
 </div>
   

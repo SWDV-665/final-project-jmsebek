@@ -51,7 +51,7 @@
         <ion-item>
           <ion-label>
             <h3>Licenses:</h3>
-            <p *ngFor="let license of getLicenses();">Number: {{license.licenseNumber}}&nbsp;&nbsp;Type: {{license.licenseType}}</p>
+            <ion-item *ngFor="let license of getLicenses();">Number: {{license.licenseNumber}}&nbsp;&nbsp;Type: {{license.licenseType}}</ion-item>
             <ion-button (click)="addLicense()" fill="clear">Add License Information</ion-button>
           </ion-label>
         </ion-item>
